@@ -1,5 +1,11 @@
 <?php
-function tw_features_meta_box(){
+function pw_price_tables_opcoes( $post ){
+
+	$preco_data = get_post_meta($post->ID,'preco_data',true);
+	var_dump($preco_data);
+	//var_dump( $post );
+
+
 ?>
 <table  class="table table-bordered table-price">
 	<thead>
@@ -8,6 +14,7 @@ function tw_features_meta_box(){
 			<td>Preço</td>
 			<td>Hora Início</td>
 			<td>Hora Final</td>
+			<td></td>
 			<td></td>
 		</tr>
 	</thead>
@@ -27,7 +34,7 @@ function tw_features_meta_box(){
 				</select>
 			</td>
 			<td>
-				<input class="form-control money" type="text" name="pw_price[]" value=""></td>
+				<input class="form-control money" type="text" name="pw_price[]"  value=""></td>
 			<td>
 				<input class="form-control" type="time" name="pw_start_hour[]" value="">
 			</td>

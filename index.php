@@ -18,13 +18,15 @@ define( 'PRICE_TABLES_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
 //includes
 require_once( PRICE_TABLES_PLUGIN_DIR.'/includes/activation.php' );
-require_once( PRICE_TABLES_PLUGIN_DIR.'/includes/admin/price_tables_admin_init.php' );
-
+require_once( PRICE_TABLES_PLUGIN_DIR.'/includes/admin/admin_init.php' );
+require_once( PRICE_TABLES_PLUGIN_DIR.'/includes/show_price_tables_init.php' );
 
 //hooks
 register_activation_hook( __FILE__, 'pw_activation' );
 
+
 add_action('admin_init', 'pw_price_table_admin_init');
-add_action( 'save_post', 'pw_save_meta_boxes_data' );
+add_action( 'save_post', 'pw_save_meta_boxes_data', 10, 3 );
+add_action('init','pw_price_table_init');
 
 //shortcodes
