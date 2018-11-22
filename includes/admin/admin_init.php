@@ -42,6 +42,9 @@ function table_price_init(){
 			echo '<input ' . $checked . ' type="checkbox" name="price_tables_info_settings[enabled][]" value="' . $type_key . '"> ' . $type_obj->labels->name . '<br>';
 		}
 	}
+
+	echo '<div class="al-box" style="margin-top: 10px;">' . __( 'You can also display price with', 'price_tables' ) . ': <ol><li>' . sprintf( __( '%s shortcode placed in content.', 'price_tables' ), '<code>' . esc_html( '[price_table_shortcode]' ) . '</code>' ) . '</li></ol></div>';
+
 	echo '<p class="submit"><input type="submit" class="button-primary" value="' . __( 'Save changes', 'price_tables' ) . '"/></p>';
 	echo '</form>';
 }
