@@ -1,0 +1,43 @@
+input[name="date_search"].price_table{
+	margin-left: 5px;
+	padding:0.3em;
+	width: 29%;
+	display: inline-block;
+	position: static!important;
+}
+
+#boxTabela{
+	display: none;
+	border:1px solid #eee;
+	margin-bottom: 20px;
+}
+
+#boxTabela th{
+	border-bottom: 1px solid #eee;
+}
+
+#boxTabela p.warning{
+	text-align: center;
+	font-weight: bold;
+}
+
+#boxCalendario .dashicons{
+	font-size: 20px;
+	margin-top: 10px;
+    margin-left: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+    input[name="date_search"].price_table{
+		padding:0.3em;
+		width: 50%;
+		display: block;
+	}
+
+	#boxCalendario .dashicons{
+		display:none;
+	}
+}
+
+
+
