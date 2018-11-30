@@ -5,15 +5,18 @@ function pw_price_tables_opcoes( $post ){
 	$info_table_edit = false;
 
 	if( !empty( $info_table_price ) ){
-		$info_table_edit = true;
+		
 		$info_table_price_array_unserialize = unserialize( $info_table_price );
-		$info_table_price_array = array();
-		$j = 0;
+		if( !empty($info_table_price_array_unserialize) ){
 
-		foreach( $info_table_price_array_unserialize as $key => $value ){
-			$indice = explode( "_", $key );
-			$info_table_price_array[$indice[count($indice)-1]][$indice[1]] = $value;
-			$j++;
+			$info_table_price_array = array();
+			$j = 0;
+			$info_table_edit = true;
+			foreach( $info_table_price_array_unserialize as $key => $value ){
+				$indice = explode( "_", $key );
+				$info_table_price_array[$indice[count($indice)-1]][$indice[1]] = $value;
+				$j++;
+			}
 		}
 
 	}
