@@ -45,7 +45,7 @@ input[name="date_search"].price_table{
     border-top: 1px solid #ddd;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 14px;
-    text-align: center;
+    text-align: center !important;
 }
 
 .table>thead>tr>th {
@@ -97,7 +97,7 @@ input[name="date_search"].price_table{
 #boxCalendario .icon{
     display: inline-block;
     fill: currentColor;
-    height: 2em;
+    height: 1.6em;
     position: relative;
     top: 0;
     vertical-align: middle;
@@ -116,6 +116,7 @@ input[name="date_search"].price_table{
     width: 25%;
     padding: 7px;
     outline: none;
+    border: 1px solid #bbb;
 }
 
 #boxCalendario .input-field:focus {

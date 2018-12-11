@@ -91,7 +91,7 @@ function pw_search_date(){
 		$html.="</tbody></table>";
 	}else{
 
-		$html.= "<table><tr><td colspan='4'><p class='alert alert-danger'>Não há nenhum preço para ".$week[$day_of_week]."</p></td></tr></table>";
+		$html.= "<table><tr><td colspan='4'><p class='alert alert-danger'>Não há nenhum preço promocional para ".$week[$day_of_week]."</p></td></tr></table>";
 
 	}
 	
