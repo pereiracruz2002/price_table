@@ -19,8 +19,12 @@ function pw_price_table_creator_shortcode(){
 
 
 	if( is_single() || is_page()){
-		$content= "<div id='boxCalendario'><p>Valores válidos para <b>hoje: </b><input name='date_search' class='price_table' data-id='".$post->ID."' min='".$today."' max='".$one_more_week."' type='date' value='".$today."' ><span id='calendar' class='dashicons dashicons-calendar-alt'></p></div>
-		<div id='boxTabela'></div>";
+		// $content= "<div id='boxCalendario'><p>Valores válidos para <b>hoje: </b><input name='date_search' class='price_table' data-id='".$post->ID."' min='".$today."' max='".$one_more_week."' type='date' value='".$today."' ><span id='calendar' class='dashicons dashicons-calendar-alt'></p></div>
+		// <div id='boxTabela'></div>";
+
+		// $content = '<div id="boxCalendario"><p>Valores válidos para <b>hoje: </b><input type="text" name="date_search"  class="form-control price_table" data-toggle="datepicker" data-max="'.$one_more_week.'" data-min="'.$today.'" data-id="'.$post->ID.'" ><span id="calendar" class="dashicons dashicons-calendar-alt"></p><div id="boxTabela"></div>';
+
+		$content = '<div id="boxCalendario"><p>Valores válidos para <b>hoje: </b><div class="input-container"><i class="icon dashicons dashicons-calendar-alt"></i><input class="input-field" type="text" name="date_search"  class="form-control price_table" data-toggle="datepicker" data-max="'.$one_more_week.'" data-min="'.$today.'" data-id="'.$post->ID.'"></div></div><div id="boxTabela"></div>';
 	}
 
 	return $content;

@@ -75,17 +75,23 @@ function pw_search_date(){
 
 	if( !empty( $return_date ) ){
 
-		$html.="<table><thead><th>Dia</th><th>Valor</th><th>Das</th><th>Ás</th></thead><tbody>";
+		$html.="<table class='table table-bordered'><thead><th>Dia</th><th>Valor</th><th>Das</th><th>Ás</th></thead><tbody>";
 
-
+		$i = 0;
 		foreach( $return_date as $label => $val ){
-			$html.="<tr><td>".$week[$day_of_week]."</td><td> R$ ".number_format($return_date[$label]['price'],2,',','.')."</td><td>".$return_date[$label]['start']."</td><td>".$return_date[$label]['finish']."</td></tr>";
+			if(($i%2)==0){
+				$par_impar = "par";
+			}else{
+				$par_impar = "impar";
+			}
+			$html.="<tr class=' ".$par_impar."'><td>".$week[$day_of_week]."</td><td> R$ ".number_format($return_date[$label]['price'],2,',','.')."</td><td>".$return_date[$label]['start']."</td><td>".$return_date[$label]['finish']."</td></tr>";
+			$i++;
 		}
 
 		$html.="</tbody></table>";
 	}else{
 
-		$html.= "<table><tr><td colspan='4'><p class='warning'>Não há nenhum preço para ".$week[$day_of_week]."</p></td></tr></table>";
+		$html.= "<table><tr><td colspan='4'><p class='alert alert-danger'>Não há nenhum preço para ".$week[$day_of_week]."</p></td></tr></table>";
 
 	}
 	

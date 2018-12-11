@@ -1,12 +1,16 @@
-jQuery('input[name="date_search"]').on('change',function(){
+
+jQuery('[data-toggle="datepicker"]').on('change',function(){
 
 	var date = jQuery(this).val();
-	var data_id = jQuery('input').attr('data-id');
+	var d = date.split("/");
+	var data_final = d[2]+"-"+d[1]+"-"+d[0];
+
+	var data_id = jQuery('[data-toggle="datepicker"]').attr('data-id');
 	jQuery.ajax({
 		type:'POST',
 		url: ajax_object.ajax_url,
 		dataType: 'html',
-		data:{action: 'pw_search_date', day:date, id:data_id},
+		data:{action: 'pw_search_date', day:data_final, id:data_id},
 		success: function( data ){
 			jQuery('#boxTabela').empty();
 			jQuery('#boxTabela').append(data);
@@ -20,5 +24,14 @@ jQuery('input[name="date_search"]').on('change',function(){
 })
 
 jQuery('input[name="date_search"]').trigger("change");
+
+jQuery('[data-toggle="datepicker"]').datepicker(
+	{ autoHide: true, 
+	  autoPick:true, 
+	  format: 'dd/mm/yyyy', 
+	  language: 'pt-BR',
+	  daysShort:['Dom','Seg','Ter','Qua','Qui','Sex','Sáb']
+	}
+);
 
 
